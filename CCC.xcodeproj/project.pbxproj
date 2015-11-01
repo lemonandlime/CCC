@@ -17,6 +17,9 @@
 		45A347B11BE6B53A009F94B3 /* EpisodeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */; };
 		45A347B51BE6B798009F94B3 /* mainJSONCCC.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A347B41BE6B798009F94B3 /* mainJSONCCC.json */; };
 		45A347B61BE6BA79009F94B3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3479E1BE6A442009F94B3 /* Episode.swift */; };
+		45A347BA1BE6C80A009F94B3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B91BE6C80A009F94B3 /* DataProvider.swift */; };
+		45A347BC1BE6CCC2009F94B3 /* DataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347BB1BE6CCC2009F94B3 /* DataProviderTest.swift */; };
+		45A347BD1BE6CCEA009F94B3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B91BE6C80A009F94B3 /* DataProvider.swift */; };
 		54B487A77F509A716520F6C1 /* Pods_CCC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103187F5E566BD0B9D2284DB /* Pods_CCC.framework */; };
 		D30DA3F974BD13105D2D3B0E /* Pods_CCCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D447200C1205B314B0D38A /* Pods_CCCTests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,8 @@
 		45A347AA1BE6B4E0009F94B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeModelTest.swift; sourceTree = "<group>"; };
 		45A347B41BE6B798009F94B3 /* mainJSONCCC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainJSONCCC.json; sourceTree = "<group>"; };
+		45A347B91BE6C80A009F94B3 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		45A347BB1BE6CCC2009F94B3 /* DataProviderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderTest.swift; sourceTree = "<group>"; };
 		53E712D98D4EE05FE848393B /* Pods-CCC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCC/Pods-CCC.debug.xcconfig"; sourceTree = "<group>"; };
 		80D40D016242F0B7AD90EC5B /* Pods-CCCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTests/Pods-CCCTests.release.xcconfig"; sourceTree = "<group>"; };
 		A08D1075C30745070DBB3112 /* Pods-CCCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTests/Pods-CCCTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				4509A1391BE35DC100349EAA /* CoreMedia.framework */,
+				45A347B81BE6C7A2009F94B3 /* API */,
+				45A347B71BE6C766009F94B3 /* ViewModels */,
 				45A3479D1BE6A3A0009F94B3 /* Models */,
 				4509A1221BE35BFD00349EAA /* CCC */,
 				45A347A71BE6B4E0009F94B3 /* CCCTests */,
@@ -132,8 +139,24 @@
 				45A347B41BE6B798009F94B3 /* mainJSONCCC.json */,
 				45A347AA1BE6B4E0009F94B3 /* Info.plist */,
 				45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */,
+				45A347BB1BE6CCC2009F94B3 /* DataProviderTest.swift */,
 			);
 			path = CCCTests;
+			sourceTree = "<group>";
+		};
+		45A347B71BE6C766009F94B3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		45A347B81BE6C7A2009F94B3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				45A347B91BE6C80A009F94B3 /* DataProvider.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		EEF7CCE63F37C5DF036C0AD6 /* Pods */ = {
@@ -351,6 +374,7 @@
 				4509A1261BE35BFD00349EAA /* ViewController.swift in Sources */,
 				45A3479F1BE6A442009F94B3 /* Episode.swift in Sources */,
 				4509A1241BE35BFD00349EAA /* AppDelegate.swift in Sources */,
+				45A347BA1BE6C80A009F94B3 /* DataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +383,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A347B11BE6B53A009F94B3 /* EpisodeModelTest.swift in Sources */,
+				45A347BC1BE6CCC2009F94B3 /* DataProviderTest.swift in Sources */,
+				45A347BD1BE6CCEA009F94B3 /* DataProvider.swift in Sources */,
 				45A347B61BE6BA79009F94B3 /* Episode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
