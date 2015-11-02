@@ -14,7 +14,13 @@ import Alamofire
 
 private let _sharedInstance = DataProvider()
 private let baseUrl = "http://46.101.78.53:3000/"
+private let cache = NSCache()
+
+private let kMainDataKey = "mainData"
+
+
 class DataProvider: NSObject {
+    
     
     
     class var sharedInstance : DataProvider {
@@ -22,6 +28,10 @@ class DataProvider: NSObject {
     }
     
     func getMainData(onCompletion: Result<[Episode], NSError> -> Void) {
+        if let episodes = cache.objectForKey(kMainDataKey) as? [Episode] {
+            onCompletion(Result.Success(episodes))
+            return
+        }
         Alamofire.request(
             .GET,
             baseUrl,
