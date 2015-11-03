@@ -11,7 +11,8 @@ import AlamofireImage
 import Alamofire
 
 class MainTableViewController: UITableViewController {
-    let imageDonwloader = ImageDownloader.init()
+    let provider = DataProvider.sharedInstance
+    
     var episodes: [Episode] = []
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class MainTableViewController: UITableViewController {
     }
 
     func getData(){
-        DataProvider.sharedInstance.getMainData { (result) -> Void in
+        provider.getMainData { (result) -> Void in
             switch result{
             case .Failure(let error):
                 let alert = UIAlertController(
@@ -58,6 +59,20 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         let episode = episodes[indexPath.row]
         cell.textLabel?.text = episode.title
+        
+        cell.imageView?.image = nil
+        
+        provider.getImageForEpisode(episode, size: .Thumbnail) { (result) -> Void in
+            switch result {
+            case .Failure(let error):
+                print(error)
+                
+            case .Success(let image):
+                cell.imageView?.image = image
+                cell.setNeedsLayout()
+            }
+        }
+        
 
         return cell
     }
