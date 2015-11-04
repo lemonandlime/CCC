@@ -12,7 +12,7 @@ import AVFoundation
 import AlamofireImage
 import Alamofire
 
-class MainViewController: UIViewController, UICollectionViewDataSource {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     let provider = DataProvider.sharedInstance
     var player: AVPlayer!
@@ -85,6 +85,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         }
 
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.playEpisode(viewModel.dataForIndexPath(indexPath))
+    }
+
+    
+    private func playEpisode(episode: Episode) {
+        let player = AVPlayer(URL: NSURL(string: episode.mediaUrl!)!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.presentViewController(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
     }
 }
 
