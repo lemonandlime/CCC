@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -34,17 +35,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhu-Na-0Sg">
-                                                    <rect key="frame" x="179" y="262" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhu-Na-0Sg">
+                                                    <rect key="frame" x="8" y="232" width="384" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anN-eo-KdZ">
-                                                    <rect key="frame" x="8" y="8" width="384" height="284"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anN-eo-KdZ">
+                                                    <rect key="frame" x="8" y="8" width="384" height="216"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="anN-eo-KdZ" secondAttribute="height" multiplier="16:9" id="bMI-Fo-Bn5"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jb-o7-yrK">
+                                                    <rect key="frame" x="11" y="259" width="379" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -52,13 +63,12 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstItem="anN-eo-KdZ" firstAttribute="leading" secondItem="Wa3-0W-WDM" secondAttribute="leadingMargin" id="B3S-2A-nem"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="anN-eo-KdZ" secondAttribute="bottom" id="F9p-Vf-XZ2"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="anN-eo-KdZ" secondAttribute="trailing" id="MZO-3e-Scf"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Uhu-Na-0Sg" secondAttribute="bottom" constant="9" id="N7d-XO-FSB"/>
+                                            <constraint firstItem="7jb-o7-yrK" firstAttribute="centerX" secondItem="Wa3-0W-WDM" secondAttribute="centerX" id="Nj9-pM-c7L"/>
                                             <constraint firstItem="anN-eo-KdZ" firstAttribute="top" secondItem="Wa3-0W-WDM" secondAttribute="topMargin" id="Pv5-cM-yP0"/>
-                                            <constraint firstItem="Uhu-Na-0Sg" firstAttribute="centerX" secondItem="Wa3-0W-WDM" secondAttribute="centerX" id="XoO-P4-dH7"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="guestsLabel" destination="7jb-o7-yrK" id="e3F-f2-KoV"/>
                                             <outlet property="imageView" destination="anN-eo-KdZ" id="biH-gV-j89"/>
                                             <outlet property="titleLabel" destination="Uhu-Na-0Sg" id="x8n-Od-Sd8"/>
                                         </connections>

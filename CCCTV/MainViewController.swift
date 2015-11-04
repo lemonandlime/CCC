@@ -22,7 +22,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -71,8 +70,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! EpisodeCell
         let episode = viewModel.dataForIndexPath(indexPath)
         
-        cell.titleLabel.text = episode.title
-        
+        cell.titleLabel.text = episode.title;
+        cell.guestsLabel.text = "with " + episode.guestsString;
+
         provider.getImageForEpisode(episode, size: .Thumbnail) { (result) -> Void in
             switch result {
             case .Failure(let error):

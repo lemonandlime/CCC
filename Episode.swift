@@ -37,6 +37,7 @@ struct Episode {
     let title: String?
     let description: String?
     let guests: Array<Guest>
+    let guestsString: String
     let images: Image?
     let mediaUrl: String?
     let urlSlug: String?
@@ -58,6 +59,10 @@ struct Episode {
             (data["guests"].array?.map({ (json: JSON) -> Guest in
                 return Guest(name: json["name"].string ?? "")
             })) ?? []
+        
+        guestsString = guests.map({ (guest) -> String in
+            return guest.name
+        }).joinWithSeparator(" & ") ?? ""
         
         images          = Image(poster: data["images"]["poster"].string, thumb: data["images"]["thumb"].string)
         mediaUrl        = data["mediaUrl"].string

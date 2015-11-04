@@ -81,7 +81,16 @@ class DataProvider: NSObject {
     private func sortBySeason(episodes: [Episode]) -> [Int : [Episode]] {
         var seasons = [Int : [Episode]]();
         
-        episodes.forEach { (episode) -> () in
+        let episodesList = episodes.filter { (episode) -> Bool in
+            switch episode.type {
+            case .Episode:
+                return true
+            case .None:
+                return false
+            }
+        }
+        
+        episodesList.forEach { (episode) -> () in
             
             if seasons[episode.season] == nil {
                 seasons[episode.season] = Array();

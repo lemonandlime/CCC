@@ -10,6 +10,7 @@ import UIKit
 
 class EpisodeCell: UICollectionViewCell {
     
-    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var guestsLabel: UILabel!
 }
