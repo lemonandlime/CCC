@@ -15,11 +15,11 @@ import Alamofire
 class MainTableViewController: UITableViewController {
     let provider = DataProvider.sharedInstance
     var player: AVPlayer!
-    var episodes: [Episode] = []
+    var seasons: [Int:[Episode]] = [:]
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if episodes.isEmpty {
+        if seasons.isEmpty {
             self.getData()
         }
     }
@@ -40,8 +40,8 @@ class MainTableViewController: UITableViewController {
                     
                 })
                 
-            case .Success(let episodes):
-                self.episodes = episodes
+            case .Success(let seasons):
+                self.seasons = seasons
                 self.tableView.reloadData()
             }
         }
@@ -50,14 +50,22 @@ class MainTableViewController: UITableViewController {
     
     // MARK: - Table view data source
 
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return seasons.count
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodes.count
+        return (seasons[section+1]?.count)!
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(format: "Season %d", seasons[section+1]![0].season);
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        let episode = episodes[indexPath.row]
+        let episode = seasons[indexPath.section+1]![indexPath.row]
         cell.textLabel?.text = episode.title
         
         cell.imageView?.image = nil
@@ -76,7 +84,7 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let episode = episodes[indexPath.row]
+        let episode = seasons[indexPath.section+1]![indexPath.row]
         self.playEpisode(episode)
     }
     

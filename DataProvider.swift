@@ -32,11 +32,7 @@ class DataProvider: NSObject {
         return _sharedInstance
     }
     
-    func getMainData(onCompletion: Result<[Episode], NSError> -> Void) {
-        if let episodes = cache.objectForKey(kMainDataKey) as? [Episode] {
-            onCompletion(Result.Success(episodes))
-            return
-        }
+    func getMainData(onCompletion: Result<[Int:[Episode]], NSError> -> Void) {
         Alamofire.request(
             .GET,
             baseUrl,
@@ -54,7 +50,7 @@ class DataProvider: NSObject {
                         .map({ (json: JSON) -> Episode in
                             return Episode(data: json)
                         })) ?? []
-                    onCompletion(Result.Success(episodes))
+                    onCompletion(Result.Success(self.sortBySeason(episodes)))
                 }
         }
     }
@@ -80,6 +76,21 @@ class DataProvider: NSObject {
                 onCompletion(Result.Success(image))
             }
         }
+    }
+    
+    private func sortBySeason(episodes: [Episode]) -> [Int : [Episode]] {
+        var seasons = [Int : [Episode]]();
+        
+        episodes.forEach { (episode) -> () in
+            
+            if seasons[episode.season] == nil {
+                seasons[episode.season] = Array();
+            }
+            
+            seasons[episode.season]?.append(episode);
+        }
+        
+        return seasons;
     }
     
     enum ImageSize {

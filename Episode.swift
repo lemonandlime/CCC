@@ -28,7 +28,7 @@ struct Episode {
     
     let mediaId: Int
     let type: Type
-    let season: String?
+    let season: Int
     let launchDate: String?
     let pubDate: String?
     let pubDateTime: Int?
@@ -45,7 +45,7 @@ struct Episode {
     init(data: JSON){
         mediaId         = data["mediaId"].int!
         type            = Type(value: data["type"].string!)
-        season          = data["season"].string
+        season          = Int(data["season"].string!)!
         launchDate      = data["launchDate"].string
         pubDate         = data["pubDate"].string
         pubDateTime     = data["pubDateTime"].int
