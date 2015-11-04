@@ -15,12 +15,11 @@ import Alamofire
 class MainTableViewController: UITableViewController {
     let provider = DataProvider.sharedInstance
     var player: AVPlayer!
-    var seasons: [Int:[Episode]] = [:]
     let viewModel = MainViewModel()
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if seasons.isEmpty {
+        if viewModel.numberOfSections() == 0 {
             self.getData()
         }
     }
