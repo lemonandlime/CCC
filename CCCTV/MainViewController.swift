@@ -80,7 +80,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! EpisodeCell
         let episode = viewModel.dataForIndexPath(indexPath)
-        
+        cell.imageView.adjustsImageWhenAncestorFocused = true
         cell.titleLabel.text = episode.title;
         cell.guestsLabel.text = "with " + episode.guestsString;
 
@@ -100,6 +100,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.playEpisode(viewModel.dataForIndexPath(indexPath))
+    }
+    
+    func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+        super.didUpdateFocusInContext(context, withAnimationCoordinator: coordinator)
+
+        guard let indexPath = context.nextFocusedIndexPath else {
+            return
+        }
+        
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EpisodeCell
+        self.focusCell(cell)
+    }
+    
+    private func focusCell(cell: EpisodeCell) {
+        cell.titleLabel.transform = CGAffineTransformMakeScale(2, 2)
+        cell.guestsLabel.transform = CGAffineTransformMakeScale(2, 2)
     }
 
     
