@@ -104,19 +104,36 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         super.didUpdateFocusInContext(context, withAnimationCoordinator: coordinator)
+        
+        if let indexPath = context.previouslyFocusedIndexPath {
+            let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EpisodeCell
+            coordinator.addCoordinatedAnimations({ () -> Void in
+                self.focusCell(cell, focus: false)
+                }, completion: nil)
 
-        guard let indexPath = context.nextFocusedIndexPath else {
-            return
+        }
+        
+        context.previouslyFocusedIndexPath
+        
+        if let indexPath = context.nextFocusedIndexPath {
+            let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EpisodeCell
+            coordinator.addCoordinatedAnimations({ () -> Void in
+                self.focusCell(cell, focus: true)
+                }, completion: nil)
+        }
+    }
+    
+    private func focusCell(cell: EpisodeCell, focus: Bool) {
+        switch focus {
+        case true:
+            cell.titleLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.2, 1.2), CGAffineTransformMakeTranslation(0, 30))
+            cell.guestsLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.2, 1.2), CGAffineTransformMakeTranslation(0, 30))
+        case false:
+            cell.titleLabel.transform = CGAffineTransformIdentity
+            cell.guestsLabel.transform = CGAffineTransformIdentity
         }
         
         
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EpisodeCell
-        self.focusCell(cell)
-    }
-    
-    private func focusCell(cell: EpisodeCell) {
-        cell.titleLabel.transform = CGAffineTransformMakeScale(2, 2)
-        cell.guestsLabel.transform = CGAffineTransformMakeScale(2, 2)
     }
 
     
