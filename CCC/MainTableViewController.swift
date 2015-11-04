@@ -7,17 +7,15 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 import AlamofireImage
 import Alamofire
 
 class MainTableViewController: UITableViewController {
     let provider = DataProvider.sharedInstance
-    
+    var player: AVPlayer!
     var episodes: [Episode] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-            }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -74,25 +72,21 @@ class MainTableViewController: UITableViewController {
                 cell.setNeedsLayout()
             }
         }
-        
-
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let cell = sender as? UITableViewCell else {
-            return
-        }
-        
-        
-        switch segue.identifier! {
-        case "Player" :
-            (segue.destinationViewController as! PlayerViewController).episode =
-            episodes[tableView.indexPathForCell(cell)!.row]
-            break
-            
-        default :
-            break
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let episode = episodes[indexPath.row]
+        self.playEpisode(episode)
+    }
+    
+    private func playEpisode(episode: Episode) {
+        let player = AVPlayer(URL: NSURL(string: episode.mediaUrl!)!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.presentViewController(playerViewController, animated: true) {
+            playerViewController.player!.play()
         }
     }
+    
 }
