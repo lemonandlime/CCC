@@ -71,14 +71,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! EpisodeCell
         let episode = viewModel.dataForIndexPath(indexPath)
         
-        cell.title.text = episode.title
+        cell.titleLabel.text = episode.title
         
+        provider.getImageForEpisode(episode, size: .Thumbnail) { (result) -> Void in
+            switch result {
+            case .Failure(let error):
+                print(error)
+                
+            case .Success(let image):
+                cell.imageView?.image = image
+                cell.setNeedsLayout()
+            }
+        }
+
         return cell
     }
-    
-
-    
-    
-
 }
 

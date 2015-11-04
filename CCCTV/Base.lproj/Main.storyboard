@@ -41,17 +41,26 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anN-eo-KdZ">
+                                                    <rect key="frame" x="8" y="8" width="384" height="284"/>
+                                                    <animations/>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
                                         <constraints>
+                                            <constraint firstItem="anN-eo-KdZ" firstAttribute="leading" secondItem="Wa3-0W-WDM" secondAttribute="leadingMargin" id="B3S-2A-nem"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="anN-eo-KdZ" secondAttribute="bottom" id="F9p-Vf-XZ2"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="anN-eo-KdZ" secondAttribute="trailing" id="MZO-3e-Scf"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Uhu-Na-0Sg" secondAttribute="bottom" constant="9" id="N7d-XO-FSB"/>
+                                            <constraint firstItem="anN-eo-KdZ" firstAttribute="top" secondItem="Wa3-0W-WDM" secondAttribute="topMargin" id="Pv5-cM-yP0"/>
                                             <constraint firstItem="Uhu-Na-0Sg" firstAttribute="centerX" secondItem="Wa3-0W-WDM" secondAttribute="centerX" id="XoO-P4-dH7"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="title" destination="Uhu-Na-0Sg" id="vOn-B6-01l"/>
+                                            <outlet property="imageView" destination="anN-eo-KdZ" id="biH-gV-j89"/>
+                                            <outlet property="titleLabel" destination="Uhu-Na-0Sg" id="x8n-Od-Sd8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
