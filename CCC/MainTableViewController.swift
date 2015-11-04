@@ -16,6 +16,7 @@ class MainTableViewController: UITableViewController {
     let provider = DataProvider.sharedInstance
     var player: AVPlayer!
     var seasons: [Int:[Episode]] = [:]
+    let viewModel = MainViewModel()
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -41,7 +42,7 @@ class MainTableViewController: UITableViewController {
                 })
                 
             case .Success(let seasons):
-                self.seasons = seasons
+                self.viewModel.dataSource = seasons
                 self.tableView.reloadData()
             }
         }
@@ -51,21 +52,21 @@ class MainTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return seasons.count
+        return viewModel.numberOfSections()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (seasons[section+1]?.count)!
+        return viewModel.numberOfItemsInSection(section)
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(format: "Season %d", seasons[section+1]![0].season);
+        return viewModel.titleForSection(section)
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        let episode = seasons[indexPath.section+1]![indexPath.row]
+        let episode = viewModel.dataForIndexPath(indexPath)
         cell.textLabel?.text = episode.title
         
         cell.imageView?.image = nil
@@ -84,8 +85,7 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let episode = seasons[indexPath.section+1]![indexPath.row]
-        self.playEpisode(episode)
+        self.playEpisode(viewModel.dataForIndexPath(indexPath))
     }
     
     private func playEpisode(episode: Episode) {
