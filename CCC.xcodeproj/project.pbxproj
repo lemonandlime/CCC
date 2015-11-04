@@ -31,6 +31,7 @@
 		45B616ED1BE95F8100BA857C /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B91BE6C80A009F94B3 /* DataProvider.swift */; };
 		45B616EE1BE95F8800BA857C /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3479E1BE6A442009F94B3 /* Episode.swift */; };
 		54B487A77F509A716520F6C1 /* Pods_CCC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103187F5E566BD0B9D2284DB /* Pods_CCC.framework */; };
+		9ED1E18D1BEA7D4B00ABBCF3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1E18C1BEA7D4B00ABBCF3 /* SectionHeaderView.swift */; };
 		D30DA3F974BD13105D2D3B0E /* Pods_CCCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D447200C1205B314B0D38A /* Pods_CCCTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		45B616E71BE95F4E00BA857C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E712D98D4EE05FE848393B /* Pods-CCC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCC/Pods-CCC.debug.xcconfig"; sourceTree = "<group>"; };
 		80D40D016242F0B7AD90EC5B /* Pods-CCCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTests/Pods-CCCTests.release.xcconfig"; sourceTree = "<group>"; };
+		9ED1E18C1BEA7D4B00ABBCF3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		A08D1075C30745070DBB3112 /* Pods-CCCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTests/Pods-CCCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2D447200C1205B314B0D38A /* Pods_CCCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A4E74DCEB26DBCE9093761 /* Pods-CCC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCC/Pods-CCC.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				45B616E51BE95F4E00BA857C /* Assets.xcassets */,
 				45B616E71BE95F4E00BA857C /* Info.plist */,
 				45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */,
+				9ED1E18C1BEA7D4B00ABBCF3 /* SectionHeaderView.swift */,
 			);
 			path = CCCTV;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				45B616ED1BE95F8100BA857C /* DataProvider.swift in Sources */,
 				45B616EE1BE95F8800BA857C /* Episode.swift in Sources */,
 				45B616E11BE95F4E00BA857C /* MainViewController.swift in Sources */,
+				9ED1E18D1BEA7D4B00ABBCF3 /* SectionHeaderView.swift in Sources */,
 				45B616DF1BE95F4E00BA857C /* AppDelegate.swift in Sources */,
 				45941E5B1BEA65FC00E661C7 /* EpisodeCell.swift in Sources */,
 			);

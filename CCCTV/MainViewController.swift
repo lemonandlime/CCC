@@ -62,6 +62,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     }
     
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "SectionHeader", forIndexPath: indexPath) as! SectionHeaderView;
+            headerView.titleLabel.text = self.viewModel.titleForSection(indexPath.section);
+            return headerView;
+        default:
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItemsInSection(section)
     }

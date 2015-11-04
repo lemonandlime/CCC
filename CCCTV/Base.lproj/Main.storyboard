@@ -81,6 +81,26 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="DJH-Qh-EuS" customClass="SectionHeaderView" customModule="CCCTV" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="1880" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idM-hS-Ifi">
+                                            <rect key="frame" x="8" y="14" width="379" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="idM-hS-Ifi" firstAttribute="leading" secondItem="DJH-Qh-EuS" secondAttribute="leadingMargin" constant="15" id="Lb7-T2-fUR"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="idM-hS-Ifi" id="1Yr-Eo-fKU"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Rct-Bo-PTU"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0Ah-Ig-g5S"/>
