@@ -21,7 +21,9 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.getData()
+        if episodes.isEmpty {
+            self.getData()
+        }
     }
 
     func getData(){
@@ -75,5 +77,22 @@ class MainTableViewController: UITableViewController {
         
 
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let cell = sender as? UITableViewCell else {
+            return
+        }
+        
+        
+        switch segue.identifier! {
+        case "Player" :
+            (segue.destinationViewController as! PlayerViewController).episode =
+            episodes[tableView.indexPathForCell(cell)!.row]
+            break
+            
+        default :
+            break
+        }
     }
 }
