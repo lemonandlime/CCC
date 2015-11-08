@@ -50,14 +50,14 @@
 		103187F5E566BD0B9D2284DB /* Pods_CCC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE3968A199F7B333C99AB44 /* Pods-CCCTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTV/Pods-CCCTV.debug.xcconfig"; sourceTree = "<group>"; };
 		4509A1201BE35BFD00349EAA /* CCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4509A1231BE35BFD00349EAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4509A1231BE35BFD00349EAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../CCC/AppDelegate.swift; sourceTree = "<group>"; };
 		4509A1281BE35BFD00349EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4509A12A1BE35BFD00349EAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4509A12A1BE35BFD00349EAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../CCC/Assets.xcassets; sourceTree = "<group>"; };
 		4509A12D1BE35BFD00349EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4509A12F1BE35BFD00349EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4509A12F1BE35BFD00349EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../CCC/Info.plist; sourceTree = "<group>"; };
 		4509A1391BE35DC100349EAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		45941E571BEA612F00E661C7 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeCell.swift; path = CCCTV/EpisodeCell.swift; sourceTree = "<group>"; };
 		45A3479E1BE6A442009F94B3 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		45A347A61BE6B4E0009F94B3 /* CCCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A347AA1BE6B4E0009F94B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,16 +65,16 @@
 		45A347B41BE6B798009F94B3 /* mainJSONCCC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainJSONCCC.json; sourceTree = "<group>"; };
 		45A347B91BE6C80A009F94B3 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		45A347BB1BE6CCC2009F94B3 /* DataProviderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderTest.swift; sourceTree = "<group>"; };
-		45A347C01BE6D6AE009F94B3 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		45A347C01BE6D6AE009F94B3 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewController.swift; path = ../CCC/MainTableViewController.swift; sourceTree = "<group>"; };
 		45B616DC1BE95F4E00BA857C /* CCCTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCCTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		45B616DE1BE95F4E00BA857C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45B616E01BE95F4E00BA857C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		45B616DE1BE95F4E00BA857C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CCCTV/AppDelegate.swift; sourceTree = "<group>"; };
+		45B616E01BE95F4E00BA857C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = CCCTV/MainViewController.swift; sourceTree = "<group>"; };
 		45B616E31BE95F4E00BA857C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		45B616E51BE95F4E00BA857C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		45B616E71BE95F4E00BA857C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B616E51BE95F4E00BA857C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CCCTV/Assets.xcassets; sourceTree = "<group>"; };
+		45B616E71BE95F4E00BA857C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = CCCTV/Info.plist; sourceTree = "<group>"; };
 		53E712D98D4EE05FE848393B /* Pods-CCC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCC/Pods-CCC.debug.xcconfig"; sourceTree = "<group>"; };
 		80D40D016242F0B7AD90EC5B /* Pods-CCCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTests/Pods-CCCTests.release.xcconfig"; sourceTree = "<group>"; };
-		9ED1E18C1BEA7D4B00ABBCF3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		9ED1E18C1BEA7D4B00ABBCF3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionHeaderView.swift; path = CCCTV/SectionHeaderView.swift; sourceTree = "<group>"; };
 		A08D1075C30745070DBB3112 /* Pods-CCCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCCTests/Pods-CCCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2D447200C1205B314B0D38A /* Pods_CCCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A4E74DCEB26DBCE9093761 /* Pods-CCC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCC/Pods-CCC.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 				45B616EC1BE95F7600BA857C /* Common */,
 				45B616D71BE95EFA00BA857C /* iOS */,
 				45B616EB1BE95F5A00BA857C /* tvOS */,
+				45A347A71BE6B4E0009F94B3 /* CCCTests */,
 				261381FB88D1F39D42E64325 /* Frameworks */,
 				4509A1211BE35BFD00349EAA /* Products */,
 				EEF7CCE63F37C5DF036C0AD6 /* Pods */,
@@ -141,20 +142,6 @@
 				45B616DC1BE95F4E00BA857C /* CCCTV.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4509A1221BE35BFD00349EAA /* CCC */ = {
-			isa = PBXGroup;
-			children = (
-				4509A1231BE35BFD00349EAA /* AppDelegate.swift */,
-				4509A1271BE35BFD00349EAA /* Main.storyboard */,
-				4509A12A1BE35BFD00349EAA /* Assets.xcassets */,
-				4509A12C1BE35BFD00349EAA /* LaunchScreen.storyboard */,
-				4509A12F1BE35BFD00349EAA /* Info.plist */,
-				45A347C01BE6D6AE009F94B3 /* MainTableViewController.swift */,
-			);
-			name = CCC;
-			path = ../CCC;
 			sourceTree = "<group>";
 		};
 		45A3479D1BE6A3A0009F94B3 /* Models */ = {
@@ -173,7 +160,7 @@
 				45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */,
 				45A347BB1BE6CCC2009F94B3 /* DataProviderTest.swift */,
 			);
-			name = CCCTests;
+			path = CCCTests;
 			sourceTree = "<group>";
 		};
 		45A347B81BE6C7A2009F94B3 /* API */ = {
@@ -187,14 +174,18 @@
 		45B616D71BE95EFA00BA857C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4509A1221BE35BFD00349EAA /* CCC */,
-				45A347A71BE6B4E0009F94B3 /* CCCTests */,
+				4509A1231BE35BFD00349EAA /* AppDelegate.swift */,
+				4509A1271BE35BFD00349EAA /* Main.storyboard */,
+				4509A12A1BE35BFD00349EAA /* Assets.xcassets */,
+				4509A12C1BE35BFD00349EAA /* LaunchScreen.storyboard */,
+				4509A12F1BE35BFD00349EAA /* Info.plist */,
+				45A347C01BE6D6AE009F94B3 /* MainTableViewController.swift */,
 			);
 			name = iOS;
 			path = CCCTests;
 			sourceTree = "<group>";
 		};
-		45B616DD1BE95F4E00BA857C /* CCCTV */ = {
+		45B616EB1BE95F5A00BA857C /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				45B616DE1BE95F4E00BA857C /* AppDelegate.swift */,
@@ -204,14 +195,6 @@
 				45B616E71BE95F4E00BA857C /* Info.plist */,
 				45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */,
 				9ED1E18C1BEA7D4B00ABBCF3 /* SectionHeaderView.swift */,
-			);
-			path = CCCTV;
-			sourceTree = "<group>";
-		};
-		45B616EB1BE95F5A00BA857C /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				45B616DD1BE95F4E00BA857C /* CCCTV */,
 			);
 			name = tvOS;
 			sourceTree = "<group>";
@@ -323,7 +306,6 @@
 					};
 					45B616DB1BE95F4E00BA857C = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = S6YCP5GM7K;
 					};
 				};
 			};
@@ -570,6 +552,7 @@
 				4509A1281BE35BFD00349EAA /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../CCC;
 			sourceTree = "<group>";
 		};
 		4509A12C1BE35BFD00349EAA /* LaunchScreen.storyboard */ = {
@@ -578,6 +561,7 @@
 				4509A12D1BE35BFD00349EAA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../CCC;
 			sourceTree = "<group>";
 		};
 		45B616E21BE95F4E00BA857C /* Main.storyboard */ = {
@@ -586,6 +570,7 @@
 				45B616E31BE95F4E00BA857C /* Base */,
 			);
 			name = Main.storyboard;
+			path = CCCTV;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
