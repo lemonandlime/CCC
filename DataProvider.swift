@@ -103,7 +103,9 @@ class DataProvider: NSObject {
             seasons.append(Season(episodes: episodes))
         }
         
-        return seasons;
+        return seasons.sort({ (season1, season2) -> Bool in
+            return season1.number > season2.number
+        });
     }
     
     enum ImageSize {
