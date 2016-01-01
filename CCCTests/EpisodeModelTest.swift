@@ -8,6 +8,8 @@
 
 import XCTest
 import SwiftyJSON
+import Alamofire
+import AlamofireImage
 
 class EpisodeModelTest: XCTestCase {
     

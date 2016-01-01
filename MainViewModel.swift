@@ -10,22 +10,22 @@ import UIKit
 
 class MainViewModel: NSObject {
     
-    var dataSource: Dictionary<Int, Array<Episode>> = [ : ]
+    var dataSource: [Season] = []
     
     func numberOfSections() -> Int {
         return dataSource.count
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
-        return (dataSource[section+1]?.count)!
+        return dataSource[section].episodes.count
     }
     
     func titleForSection(section: Int) -> String {
-        return String(format: "Season %d", dataSource[section+1]![0].season) ?? "No name WTF!?";
+        return dataSource[section].name
     }
     
     func dataForIndexPath(indexPath: NSIndexPath) -> Episode {
-        return dataSource[indexPath.section+1]![indexPath.row]
+        return dataSource[indexPath.section].episodes[indexPath.row]
     }
 
 }

@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Alamofire
+import AlamofireImage
 
 class DataProviderTest: XCTestCase {
     

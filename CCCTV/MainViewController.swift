@@ -12,13 +12,11 @@ import AVFoundation
 import AlamofireImage
 import Alamofire
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MainViewController: UITableViewController, UICollectionViewDelegate {
 
     let provider = DataProvider.sharedInstance
     var player: AVPlayer!
     let viewModel = MainViewModel()
-
-    @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +47,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
             case .Success(let seasons):
                 self.viewModel.dataSource = seasons
-                self.collectionView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
@@ -57,85 +55,32 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // DataSource
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
-
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "SectionHeader", forIndexPath: indexPath) as! SectionHeaderView;
-            headerView.titleLabel.text = self.viewModel.titleForSection(indexPath.section);
-            return headerView;
-        default:
-            assert(false, "Unexpected element kind")
-        }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsInSection(section)
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.titleForSection(section)
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! EpisodeCell
-        let episode = viewModel.dataForIndexPath(indexPath)
-        cell.imageView.adjustsImageWhenAncestorFocused = true
-        cell.titleLabel.text = episode.title;
-        cell.guestsLabel.text = "with " + episode.guestsString;
-
-        provider.getImageForEpisode(episode, size: .Thumbnail) { (result) -> Void in
-            switch result {
-            case .Failure(let error):
-                print(error)
-                
-            case .Success(let image):
-                cell.imageView?.image = image
-                cell.setNeedsLayout()
-            }
-        }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SeasonTableViewCell
+        cell.section = indexPath.section
+        cell.viewModel = viewModel
+        cell.provider = provider
+        cell.collectionView.reloadData()
+        cell.onSelectedEpisode = {(episode) in self.playEpisode(episode)}
 
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.playEpisode(viewModel.dataForIndexPath(indexPath))
+    override func tableView(tableView: UITableView, canFocusRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
     }
-    
-    func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
-        super.didUpdateFocusInContext(context, withAnimationCoordinator: coordinator)
-        
-        if let indexPath = context.previouslyFocusedIndexPath {
-            let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EpisodeCell
-            coordinator.addCoordinatedAnimations({ () -> Void in
-                self.focusCell(cell, focus: false)
-                }, completion: nil)
-
-        }
-        
-        context.previouslyFocusedIndexPath
-        
-        if let indexPath = context.nextFocusedIndexPath {
-            let cell = collectionView.cellForItemAtIndexPath(indexPath) as! EpisodeCell
-            coordinator.addCoordinatedAnimations({ () -> Void in
-                self.focusCell(cell, focus: true)
-                }, completion: nil)
-        }
-    }
-    
-    private func focusCell(cell: EpisodeCell, focus: Bool) {
-        switch focus {
-        case true:
-            cell.titleLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.2, 1.2), CGAffineTransformMakeTranslation(0, 30))
-            cell.guestsLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.2, 1.2), CGAffineTransformMakeTranslation(0, 30))
-        case false:
-            cell.titleLabel.transform = CGAffineTransformIdentity
-            cell.guestsLabel.transform = CGAffineTransformIdentity
-        }
-        
-        
-    }
-
     
     private func playEpisode(episode: Episode) {
         let player = AVPlayer(URL: NSURL(string: episode.mediaUrl!)!)

@@ -32,7 +32,7 @@ class DataProvider: NSObject {
         return _sharedInstance
     }
     
-    func getMainData(onCompletion: Result<[Int:[Episode]], NSError> -> Void) {
+    func getMainData(onCompletion: Result<[Season], NSError> -> Void) {
         Alamofire.request(
             .GET,
             baseUrl,
@@ -78,8 +78,8 @@ class DataProvider: NSObject {
         }
     }
     
-    private func sortBySeason(episodes: [Episode]) -> [Int : [Episode]] {
-        var seasons = [Int : [Episode]]();
+    private func sortBySeason(episodes: [Episode]) -> [Season] {
+        var seasonsDic = [Int : [Episode]]();
         
         let episodesList = episodes.filter { (episode) -> Bool in
             switch episode.type {
@@ -92,11 +92,15 @@ class DataProvider: NSObject {
         
         episodesList.forEach { (episode) -> () in
             
-            if seasons[episode.season] == nil {
-                seasons[episode.season] = Array();
+            if seasonsDic[episode.season] == nil {
+                seasonsDic[episode.season] = Array();
             }
             
-            seasons[episode.season]?.append(episode);
+            seasonsDic[episode.season]?.append(episode);
+        }
+        var seasons = [Season]()
+        seasonsDic.forEach { (index, episodes) -> () in
+            seasons.append(Season(episodes: episodes))
         }
         
         return seasons;
