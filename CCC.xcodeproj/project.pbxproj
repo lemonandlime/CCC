@@ -10,6 +10,7 @@
 		3F66A90B85382CB2580EE977 /* Pods_CCCTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCCCFE5F2D5B84A1DFF1EED /* Pods_CCCTV.framework */; };
 		452CACD21C36FDC4001BE8F6 /* SeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CACD01C36FDBF001BE8F6 /* SeasonCell.swift */; };
 		452CACD71C3703D2001BE8F6 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CACD61C3703D2001BE8F6 /* Season.swift */; };
+		452CACD91C3734A5001BE8F6 /* A bebedera-heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452CACD81C37325A001BE8F6 /* A bebedera-heavy.otf */; };
 		45941E591BEA612F00E661C7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45941E571BEA612F00E661C7 /* MainViewModel.swift */; };
 		45941E5B1BEA65FC00E661C7 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */; };
 		45A347B11BE6B53A009F94B3 /* EpisodeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */; };
@@ -42,6 +43,7 @@
 		4509A1391BE35DC100349EAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		452CACD01C36FDBF001BE8F6 /* SeasonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonCell.swift; path = CCCTests/SeasonCell.swift; sourceTree = "<group>"; };
 		452CACD61C3703D2001BE8F6 /* Season.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		452CACD81C37325A001BE8F6 /* A bebedera-heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A bebedera-heavy.otf"; sourceTree = "<group>"; };
 		45941E571BEA612F00E661C7 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeCell.swift; path = CCCTV/EpisodeCell.swift; sourceTree = "<group>"; };
 		45A3479E1BE6A442009F94B3 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		45B616EC1BE95F7600BA857C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				452CACD81C37325A001BE8F6 /* A bebedera-heavy.otf */,
 				45A347B81BE6C7A2009F94B3 /* API */,
 				45A3479D1BE6A3A0009F94B3 /* Models */,
 				45941E571BEA612F00E661C7 /* MainViewModel.swift */,
@@ -280,6 +283,7 @@
 			files = (
 				45B616E61BE95F4E00BA857C /* Assets.xcassets in Resources */,
 				45B616E41BE95F4E00BA857C /* Main.storyboard in Resources */,
+				452CACD91C3734A5001BE8F6 /* A bebedera-heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
