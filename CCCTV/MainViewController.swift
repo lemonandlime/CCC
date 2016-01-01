@@ -82,9 +82,6 @@ class MainViewController: UITableViewController, UICollectionViewDelegate {
         return false
     }
     
- 
-
-    
     private func playEpisode(episode: Episode) {
         let player = AVPlayer(URL: NSURL(string: episode.mediaUrl!)!)
         let playerViewController = AVPlayerViewController()

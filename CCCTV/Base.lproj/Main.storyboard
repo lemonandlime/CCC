@@ -121,12 +121,12 @@
                                 <rect key="frame" x="0.0" y="54" width="800" height="360"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ZH-kh-ztc" id="Xa5-UF-4qe">
-                                    <rect key="frame" x="0.0" y="0.0" width="784" height="360"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="800" height="360"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DdF-cI-bzT">
-                                            <rect key="frame" x="8" y="8" width="784" height="344"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1be-tL-Sfm">
+                                            <rect key="frame" x="28" y="8" width="744" height="344"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="1be-tL-Sfm">
                                                 <size key="itemSize" width="400" height="340"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -183,14 +183,15 @@
                                             </cells>
                                             <connections>
                                                 <outlet property="dataSource" destination="9ZH-kh-ztc" id="hie-zD-oK2"/>
+                                                <outlet property="delegate" destination="9ZH-kh-ztc" id="IZw-1C-vUe"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="DdF-cI-bzT" secondAttribute="bottom" id="8Q9-Vp-6lF"/>
                                         <constraint firstItem="DdF-cI-bzT" firstAttribute="top" secondItem="Xa5-UF-4qe" secondAttribute="topMargin" id="AYQ-gV-c8L"/>
-                                        <constraint firstItem="DdF-cI-bzT" firstAttribute="leading" secondItem="Xa5-UF-4qe" secondAttribute="leadingMargin" id="AhH-NG-njH"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="DdF-cI-bzT" secondAttribute="trailing" id="qUA-rU-DuE"/>
+                                        <constraint firstItem="DdF-cI-bzT" firstAttribute="leading" secondItem="Xa5-UF-4qe" secondAttribute="leadingMargin" constant="20" id="AhH-NG-njH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DdF-cI-bzT" secondAttribute="trailing" constant="20" id="qUA-rU-DuE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

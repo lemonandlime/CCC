@@ -25,8 +25,6 @@ class MainViewModel: NSObject {
     }
     
     func dataForIndexPath(indexPath: NSIndexPath) -> Episode {
-        print("section", indexPath.section)
-        print("row", indexPath.row)
         return dataSource[indexPath.section].episodes[indexPath.row]
     }
 
