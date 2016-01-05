@@ -25,7 +25,11 @@ class SeasonTableViewCell: UITableViewCell, UICollectionViewDataSource {
     // DataSource
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        if viewModel != nil {
+            return 1
+        }else{
+            return 0
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
