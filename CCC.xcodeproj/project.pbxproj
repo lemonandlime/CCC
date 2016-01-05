@@ -245,7 +245,7 @@
 					};
 					45B616DB1BE95F4E00BA857C = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = X5S4QT43EQ;
+						DevelopmentTeam = N856DL6EH7;
 					};
 				};
 			};
@@ -262,8 +262,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45A347A51BE6B4E0009F94B3 /* CCCTests */,
 				45B616DB1BE95F4E00BA857C /* CCCTV */,
+				45A347A51BE6B4E0009F94B3 /* CCCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -550,7 +550,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CCCTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lemonandlime.CCGC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemonandlime.CiCgC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -567,9 +567,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Karl Soderberg (N856DL6EH7)";
 				INFOPLIST_FILE = CCCTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lemonandlime.CCGC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemonandlime.CiCgC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
