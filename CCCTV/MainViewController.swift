@@ -12,15 +12,12 @@ import AVFoundation
 import AlamofireImage
 import Alamofire
 
-class MainViewController: UITableViewController, UICollectionViewDelegate {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let provider = DataProvider.sharedInstance
     var player: AVPlayer!
     let viewModel = MainViewModel()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -55,19 +52,19 @@ class MainViewController: UITableViewController, UICollectionViewDelegate {
     
     // DataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.titleForSection(section)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SeasonTableViewCell
         cell.section = indexPath.section
         cell.viewModel = viewModel
@@ -78,7 +75,7 @@ class MainViewController: UITableViewController, UICollectionViewDelegate {
         return cell
     }
     
-    override func tableView(tableView: UITableView, canFocusRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canFocusRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
     
