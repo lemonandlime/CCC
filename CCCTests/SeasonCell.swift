@@ -40,7 +40,7 @@ class SeasonTableViewCell: UITableViewCell, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! EpisodeCell
         let episode = viewModel.dataForIndexPath(NSIndexPath(forRow: indexPath.item, inSection: section))
         cell.titleLabel.text = episode.title;
-        cell.guestsLabel.text = "with " + episode.guestsString;
+        cell.guestsLabel.text = episode.guestsString;
         
         provider.getImageForEpisode(episode, size: .Thumbnail) { (result) -> Void in
             switch result {
@@ -84,10 +84,10 @@ class SeasonTableViewCell: UITableViewCell, UICollectionViewDataSource {
     private func focusCell(cell: EpisodeCell, focus: Bool) {
         switch focus {
         case true:
-            cell.titleLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.2, 1.2), CGAffineTransformMakeTranslation(0, 30))
-            cell.guestsLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.2, 1.2), CGAffineTransformMakeTranslation(0, 30))
+            cell.titleLabel.alpha = 1.0
+            cell.guestsLabel.transform = CGAffineTransformMakeTranslation(0, 30)
         case false:
-            cell.titleLabel.transform = CGAffineTransformIdentity
+            cell.titleLabel.alpha = 0.0
             cell.guestsLabel.transform = CGAffineTransformIdentity
         }
     }
