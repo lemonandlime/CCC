@@ -21,9 +21,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if viewModel.numberOfSections() == 0 {
-            self.getData()
-        }
+        self.getData()
     }
     
     func getData(){
@@ -42,9 +40,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                 })
                 
-            case .Success(let seasons):
-                self.viewModel.dataSource = seasons
-                self.tableView.reloadData()
+            case .Success(seasons: let seasons, lastUpdated: let lastUpdated):
+                if self.viewModel.updateContent(seasons, lastUpdated: lastUpdated) {
+                    print("Reloading view content")
+                    self.tableView.reloadData()
+                }
             }
         }
     }

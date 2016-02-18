@@ -14,7 +14,7 @@ import AlamofireImage
 
 
 private let _sharedInstance = DataProvider()
-private let baseUrl = "http://46.101.78.53:3000/"
+private let baseUrl = "http://46.101.78.53:3000/v1"
 private let cache = NSCache()
 private let imageDownloader = ImageDownloader(
     configuration: ImageDownloader.defaultURLSessionConfiguration(),
@@ -25,14 +25,13 @@ private let imageDownloader = ImageDownloader(
 
 private let kMainDataKey = "mainData"
 
-
 class DataProvider: NSObject {
     
     class var sharedInstance : DataProvider {
         return _sharedInstance
     }
     
-    func getMainData(onCompletion: Result<[Season], NSError> -> Void) {
+    func getMainData(onCompletion: Result<(seasons: [Season], lastUpdated: NSDate), NSError> -> Void) {
         Alamofire.request(
             .GET,
             baseUrl,
@@ -45,12 +44,15 @@ class DataProvider: NSObject {
                     onCompletion(Result.Failure(error))
                 
                 case .Success(let data):
-                    let episodes: [Episode] = (JSON(data: data)
+                    let timestamp = JSON(data: data)["lastModified"].numberValue
+                    let serverContentLastUpdated = NSDate(timeIntervalSince1970: timestamp.doubleValue/1000.0)
+                    
+                    let episodes: [Episode] = (JSON(data: data)["result"]
                         .array?
                         .map({ (json: JSON) -> Episode in
                             return Episode(data: json)
                         })) ?? []
-                    onCompletion(Result.Success(self.sortBySeason(episodes)))
+                    onCompletion(Result.Success(seasons: self.sortBySeason(episodes), lastUpdated: serverContentLastUpdated))
                 }
         }
     }
