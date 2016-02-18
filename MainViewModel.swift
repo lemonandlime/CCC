@@ -10,7 +10,25 @@ import UIKit
 
 class MainViewModel: NSObject {
     
-    var dataSource: [Season] = []
+    private var dataSource: [Season] = []
+    
+    private var lastcontentUpdate: NSDate?
+    
+    func updateContent(newContent: [Season], lastUpdated: NSDate) -> Bool {
+        print("Checking if data should be refreshed")
+        if let viewModelUpdated = lastcontentUpdate where NSCalendar.currentCalendar().isDate(
+            viewModelUpdated,
+            equalToDate: lastUpdated,
+            toUnitGranularity: .Hour) {
+                print("Data does not need to refresh")
+                return false
+        }
+        
+        self.lastcontentUpdate = lastUpdated
+        self.dataSource = newContent
+        print("Data needs refresh")
+        return true
+    }
     
     func numberOfSections() -> Int {
         return dataSource.count
