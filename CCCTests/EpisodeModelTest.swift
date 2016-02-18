@@ -20,8 +20,8 @@ class EpisodeModelTest: XCTestCase {
         super.setUp()
         let path = NSBundle(forClass: self.dynamicType).pathForResource("mainJSONCCC", ofType: "json")
         let data = NSData(contentsOfFile: path!)
-        json = JSON(data: data!)
-        episodes = (json["result"].array?.map({ (jsonObject: JSON) -> Episode in
+        json = JSON(data: data!)["result"]
+        episodes = (json.array?.map({ (jsonObject: JSON) -> Episode in
             return Episode(data: jsonObject)
         }))!
     }
