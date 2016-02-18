@@ -11,9 +11,11 @@
 		452CACD21C36FDC4001BE8F6 /* SeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CACD01C36FDBF001BE8F6 /* SeasonCell.swift */; };
 		452CACD71C3703D2001BE8F6 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CACD61C3703D2001BE8F6 /* Season.swift */; };
 		452CACD91C3734A5001BE8F6 /* A bebedera-heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452CACD81C37325A001BE8F6 /* A bebedera-heavy.otf */; };
+		455F99EC1C7662B0001BDC8A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 455F99EB1C7662B0001BDC8A /* Podfile */; };
+		455F99ED1C7663EA001BDC8A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B91BE6C80A009F94B3 /* DataProvider.swift */; };
+		455F99EE1C766529001BDC8A /* EpisodeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */; };
 		45941E591BEA612F00E661C7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45941E571BEA612F00E661C7 /* MainViewModel.swift */; };
 		45941E5B1BEA65FC00E661C7 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */; };
-		45A347B11BE6B53A009F94B3 /* EpisodeModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B01BE6B53A009F94B3 /* EpisodeModelTest.swift */; };
 		45A347B51BE6B798009F94B3 /* mainJSONCCC.json in Resources */ = {isa = PBXBuildFile; fileRef = 45A347B41BE6B798009F94B3 /* mainJSONCCC.json */; };
 		45A347B61BE6BA79009F94B3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3479E1BE6A442009F94B3 /* Episode.swift */; };
 		45A347BC1BE6CCC2009F94B3 /* DataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347BB1BE6CCC2009F94B3 /* DataProviderTest.swift */; };
@@ -21,7 +23,6 @@
 		45B616E11BE95F4E00BA857C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B616E01BE95F4E00BA857C /* MainViewController.swift */; };
 		45B616E41BE95F4E00BA857C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B616E21BE95F4E00BA857C /* Main.storyboard */; };
 		45B616E61BE95F4E00BA857C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B616E51BE95F4E00BA857C /* Assets.xcassets */; };
-		45B616ED1BE95F8100BA857C /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A347B91BE6C80A009F94B3 /* DataProvider.swift */; };
 		45B616EE1BE95F8800BA857C /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3479E1BE6A442009F94B3 /* Episode.swift */; };
 		D30DA3F974BD13105D2D3B0E /* Pods_CCCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D447200C1205B314B0D38A /* Pods_CCCTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		452CACD01C36FDBF001BE8F6 /* SeasonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonCell.swift; path = CCCTests/SeasonCell.swift; sourceTree = "<group>"; };
 		452CACD61C3703D2001BE8F6 /* Season.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		452CACD81C37325A001BE8F6 /* A bebedera-heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A bebedera-heavy.otf"; sourceTree = "<group>"; };
+		455F99EB1C7662B0001BDC8A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		45941E571BEA612F00E661C7 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		45941E5A1BEA65FC00E661C7 /* EpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeCell.swift; path = CCCTV/EpisodeCell.swift; sourceTree = "<group>"; };
 		45A3479E1BE6A442009F94B3 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		EEF7CCE63F37C5DF036C0AD6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				455F99EB1C7662B0001BDC8A /* Podfile */,
 				53E712D98D4EE05FE848393B /* Pods-CCC.debug.xcconfig */,
 				B8A4E74DCEB26DBCE9093761 /* Pods-CCC.release.xcconfig */,
 				A08D1075C30745070DBB3112 /* Pods-CCCTests.debug.xcconfig */,
@@ -241,7 +244,7 @@
 				TargetAttributes = {
 					45A347A51BE6B4E0009F94B3 = {
 						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 4509A11F1BE35BFD00349EAA;
+						TestTargetID = 45B616DB1BE95F4E00BA857C;
 					};
 					45B616DB1BE95F4E00BA857C = {
 						CreatedOnToolsVersion = 7.1;
@@ -283,6 +286,7 @@
 			files = (
 				45B616E61BE95F4E00BA857C /* Assets.xcassets in Resources */,
 				45B616E41BE95F4E00BA857C /* Main.storyboard in Resources */,
+				455F99EC1C7662B0001BDC8A /* Podfile in Resources */,
 				452CACD91C3734A5001BE8F6 /* A bebedera-heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,9 +391,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A347B11BE6B53A009F94B3 /* EpisodeModelTest.swift in Sources */,
 				45A347BC1BE6CCC2009F94B3 /* DataProviderTest.swift in Sources */,
 				45A347B61BE6BA79009F94B3 /* Episode.swift in Sources */,
+				455F99EE1C766529001BDC8A /* EpisodeModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +403,8 @@
 			files = (
 				452CACD21C36FDC4001BE8F6 /* SeasonCell.swift in Sources */,
 				452CACD71C3703D2001BE8F6 /* Season.swift in Sources */,
+				455F99ED1C7663EA001BDC8A /* DataProvider.swift in Sources */,
 				45941E591BEA612F00E661C7 /* MainViewModel.swift in Sources */,
-				45B616ED1BE95F8100BA857C /* DataProvider.swift in Sources */,
 				45B616EE1BE95F8800BA857C /* Episode.swift in Sources */,
 				45B616E11BE95F4E00BA857C /* MainViewController.swift in Sources */,
 				45B616DF1BE95F4E00BA857C /* AppDelegate.swift in Sources */,
@@ -523,7 +527,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemonandlime.CCCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCC.app/CCC";
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCTV.app/CCCTV";
 			};
 			name = Debug;
 		};
@@ -536,7 +541,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemonandlime.CCCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCC.app/CCC";
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCCTV.app/CCCTV";
 			};
 			name = Release;
 		};
