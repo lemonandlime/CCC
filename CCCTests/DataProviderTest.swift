@@ -23,7 +23,7 @@ class DataProviderTest: XCTestCase {
             case .Failure(let error):
                 XCTAssertFalse(true, "Data retrival failed with error" + error.localizedDescription)
                 
-            case .Success(let episodes):
+            case .Success(let episodes, _):
                 XCTAssertGreaterThan(episodes.count, 0)
             }
             expectation.fulfill()
